@@ -13,7 +13,7 @@ export class ProductRepository
     datasource.getProducts().subscribe( data =>
       {
         this.products = data;
-        this.categories = <any>data.map(p => p.category)
+        this.categories = data.map(p => p.category)
         .filter((c,index,array)=> array.indexOf(c)==index).sort();
       });
   }
@@ -28,7 +28,7 @@ export class ProductRepository
 
   getProduct(id : number)
   {
-    return this.products.find(p => p.id== id)
+    return this.products.find(p => p.id == id);
   }
 
   getCategories() : string[]

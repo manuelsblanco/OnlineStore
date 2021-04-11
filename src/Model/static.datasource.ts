@@ -3,7 +3,6 @@ import { Product } from './product.model';
 import {Observable, from } from "rxjs";
 
 @Injectable()
-
 export class StaticDataSource
 {
   private products: Product[] = [
@@ -17,6 +16,7 @@ export class StaticDataSource
     new Product(8, "In red EDT 100ml", "Category 2", "Lily Jasmine (Category 2)", 100),
     new Product(9, "In Yellow Cascade", "Category 2", "Sneaker Bird (Category 2)", 100),
     new Product(10, "The Eternity of your Eyes", "Category 2", "Argentinian Leather (Category 2)", 100),
+    new Product(11, "The Eternity of your silence", "Category 3", "Argentinian Stone (Category 3)", 123),
   ]
 
   getProducts(): Observable<Product[]>

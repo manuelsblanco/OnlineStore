@@ -1,7 +1,24 @@
 import { Injectable } from "@angular/core";
 import { Product } from './../../Model/product.model';
 
-Product
+
+
+export class CartLine
+{
+  constructor(public product: Product,
+              public quantity: number)
+              {
+
+              }
+
+  get lineTotal()
+  {
+    return this.quantity * <any>this.product.price;
+  }
+
+
+}
+
 
 @Injectable()
 export class Cart
@@ -60,18 +77,3 @@ export class Cart
 
 
 
-export class CartLine
-{
-  constructor(public product: Product,
-              public quantity: number)
-              {
-
-              }
-
-  get lineTotal()
-  {
-    return this.quantity * <any>this.product.price;
-  }
-
-
-}
