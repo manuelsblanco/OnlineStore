@@ -35,9 +35,9 @@ export class StoreComponent implements OnInit {
     return this.repository.getCategories();
   }
 
-  changeCategory(newCategory?:string)
+  changeCategory(newCategory:string)
   {
-    this.selectedCategory = <any>newCategory;
+    this.selectedCategory = newCategory;
   }
 
   changePage(newPage:number)
@@ -47,8 +47,9 @@ export class StoreComponent implements OnInit {
 
 
   changePageSize(newSize:number)
-  {
-    this.productsPerPage=Number(newSize);
+  { let cualca;
+    cualca=newSize;
+    this.productsPerPage=cualca;
     this.changeCategory(<any>1);
   }
 
@@ -56,6 +57,32 @@ export class StoreComponent implements OnInit {
   {
     return Array(Math.ceil(this.repository
       .getProducts(this.selectedCategory).length / this.productsPerPage)).fill(0).map((x,i)=> i+1);
+  }
+
+  numberTwo()
+  {
+    this.productsPerPage=2;
+    console.log("El valor del numero es "+this.productsPerPage);
+  }
+  numberFour()
+  {
+    this.productsPerPage=4;
+    console.log("El valor del numero es "+this.productsPerPage);
+  }
+  numberSix()
+  {
+    this.productsPerPage=6;
+    console.log("El valor del numero es "+this.productsPerPage);
+  }
+  numberEight()
+  {
+    this.productsPerPage=8;
+    console.log("El valor del numero es "+this.productsPerPage);
+  }
+  numberTen()
+  {
+    this.productsPerPage=10;
+    console.log("El valor del numero es "+this.productsPerPage);
   }
 
 }
