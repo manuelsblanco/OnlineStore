@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/Model/product.model';
 import { ProductRepository } from "./../../Model/product.repository";
-import { StoreModule } from './store.module'
+import { Cart } from './cart.model';
+
 
 @Component({
   selector: 'store',
@@ -14,7 +16,9 @@ export class StoreComponent implements OnInit {
   public productsPerPage = 4;
   public selectPage = 1;
 
-  constructor(private repository: ProductRepository)
+  constructor(private repository: ProductRepository,
+              private cart: Cart,
+              private router: Router)
   {}
 
   category: string = '';
@@ -59,30 +63,10 @@ export class StoreComponent implements OnInit {
       .getProducts(this.selectedCategory).length / this.productsPerPage)).fill(0).map((x,i)=> i+1);
   }
 
-  numberTwo()
+  addProductToCart(product: Product)
   {
-    this.productsPerPage=2;
-    console.log("El valor del numero es "+this.productsPerPage);
-  }
-  numberFour()
-  {
-    this.productsPerPage=4;
-    console.log("El valor del numero es "+this.productsPerPage);
-  }
-  numberSix()
-  {
-    this.productsPerPage=6;
-    console.log("El valor del numero es "+this.productsPerPage);
-  }
-  numberEight()
-  {
-    this.productsPerPage=8;
-    console.log("El valor del numero es "+this.productsPerPage);
-  }
-  numberTen()
-  {
-    this.productsPerPage=10;
-    console.log("El valor del numero es "+this.productsPerPage);
+    this.cart.addLine(product);
+    this.router.navigateByUrl("/cart");
   }
 
 }
