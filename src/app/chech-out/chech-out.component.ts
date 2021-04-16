@@ -6,7 +6,7 @@ import { OrderRepository } from 'src/Model/order.repository';
 
 @Component({
   templateUrl: './chech-out.component.html',
-  styleUrls: ['./chech-out.component.css']
+  //styleUrls: ['./chech-out.component.css']
 
 })
 export class ChechOutComponent implements OnInit {

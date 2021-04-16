@@ -6,7 +6,7 @@ import { Cart } from "src/app/store/cart.model";
 export class Order
 {
   public id: number=-1;
-  public name: string="";
+  public name : string="";
   public address: string="";
   public city: string="";
   public state: string="";
