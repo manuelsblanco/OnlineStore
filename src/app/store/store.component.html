@@ -7,15 +7,22 @@
   </div>
     <div class="row text-white">
       <div class="col-3 bg-info p-2">
+        <!--Home Button-->
         <button class="btn btn-block btn-outline-primary" (click)="changeCategory(category)">
                 HOME
         </button>
+        <!--Categories Buttons-->
         <button *ngFor="let category of categories"
                  class="btn btn-outline-primary btn-block bg-dark"
                  [class.active]="category==selectedCategory"
                  (click)="changeCategory(category)">
                  {{category}}
         </button>
+        <!--Admin Button-->
+        <button class="btn btn-block btn-danger m-t-3" routerLink="/admin">
+          Admin
+        </button>
+        <!--Admin Button-->
       </div>
 
     <div class="col-9 bg-success p-2">
