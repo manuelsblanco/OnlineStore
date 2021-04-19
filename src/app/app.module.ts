@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule} from './store/store.module';
 import { StoreFirstGaurd } from './storefirst.guard';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -16,7 +18,8 @@ import { StoreFirstGaurd } from './storefirst.guard';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule
+    StoreModule,
+    FormsModule
 
   ],
   providers: [],

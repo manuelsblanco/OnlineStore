@@ -7,6 +7,8 @@ import { ChechOutComponent } from './chech-out/chech-out.component';
 import { StoreComponent } from './store/store.component';
 import { StoreModule } from './store/store.module';
 import { StoreFirstGaurd } from './storefirst.guard';
+import {AuthComponent} from 'src/app/Admin/auth.components'
+
 
 
 const routes: Routes = [];
@@ -18,8 +20,7 @@ const routes: Routes = [];
                  {path:"store",component:StoreComponent,canActivate:[StoreFirstGaurd]},
                  {path:"cart", component:CartDetailsComponent,canActivate:[StoreFirstGaurd]},
                  {path:"checkout",component:ChechOutComponent,canActivate:[StoreFirstGaurd]},
-                 {path:"admin", component: AdminComponent, canActivate:[StoreFirstGaurd]},
-                 //{path:"admin", loadChildren: "./Admin/admin.module#AdminModule", canActivate:[StoreFirstGaurd]},
+                 {path:"admin", loadChildren: "./src/app/Admin/admin.module#AdminModule", canActivate:[StoreFirstGaurd]},
                  {path:"**", redirectTo:"/store"}
                ]
              )],
@@ -27,3 +28,4 @@ const routes: Routes = [];
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

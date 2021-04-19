@@ -6,15 +6,15 @@ import { AdminComponent } from "./admin.component";
 import { AuthComponent } from "./auth.components";
 
 
-let routing = RouterModule.forChild(
-  [
+let routing = RouterModule.forChild
+([
     { path: "auth", component: AuthComponent },
     { path: "main", component: AdminComponent },
     { path: "**", redirectTo: "auth" }
-  ]);
+]);
 
   @NgModule({
-    imports: [CommonModule, FormsModule, routing],
+    imports: [CommonModule, routing, FormsModule],
     declarations: [AuthComponent,AdminComponent]
   })
   export class AdminModule
